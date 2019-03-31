@@ -19,6 +19,7 @@ SockConnection.Target = {   -- The server connected to
 }
 SockConnection.UUID = ""
 SockConnection.sock = nil -- The socket
+SockConnection.connected = false
 
 
 function SockConnection:init(address, port)
@@ -47,13 +48,22 @@ function SockConnection:checkSocket(dt)
     local data, msg = self.sock:receive()
 
     if data then
-
-        -- TODO: Manage the server commands
-        -- TODO: Implement server script language
-
+        db.Print("Received at "..tostring(__socket__mod__.gettime())..": ", data)
+        if data == "Connection accepted" then
+            self.connected = true
+        end
+        return data
     elseif msg ~= "timeout" then
         db.Print("Network error: "..tostring(msg))
+        return "Disconnection"
     end
+
+    return ""
+end
+
+
+function SockConnection:sleep(time)
+    __socket__mod__.sleep(time)
 end
 
 return SockConnection
