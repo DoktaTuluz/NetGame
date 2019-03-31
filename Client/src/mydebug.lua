@@ -1,6 +1,6 @@
 local db = {}
 
-db.STATE = true
+db.STATE = false
 
 
     -- Secure the print method so that it only logs if in debug mode
