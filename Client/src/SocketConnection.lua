@@ -13,24 +13,41 @@ end
 
 
 local SockConnection = {}
-SockConnection.Target = {   -- The server connected to
-    address = "",
-    port = 0
-}
 SockConnection.UUID = ""
 SockConnection.sock = nil -- The socket
 SockConnection.connected = false
 
+SockConnection.CONNECTION_MAX_TIMER = 5
+SockConnection.connectionTimer = 0
 
-function SockConnection:init(address, port)
-    self.Target.address = address
-    self.Target.port = port
+    -- List containing all the IP addresses of the servers
+SockConnection.listAvailableServers = {
+    "192.168.0.6",
+    "192.168.0.14"
+}
+SockConnection.CONNECTION_PORT = 50714
+SockConnection.server = 1
 
+
+    -- Prefer SockConnection:getPeerServer() rather than SockConnection.listAvailableServers[math.floor(self.server)]
+function SockConnection:getPeerServer()
+    return self.listAvailableServers[math.floor(self.server)]
+end
+
+
+function SockConnection:init()
     self.UUID = genUUID()
 
     self.sock = __socket__mod__.udp()
     self.sock:settimeout(0)
-    self.sock:setpeername(self.Target.address, self.Target.port)
+    self.sock:setpeername(self:getPeerServer(), self.CONNECTION_PORT)
+    self:tryToConnect()
+end
+
+
+function SockConnection:tryToConnect()
+    self:send(0, "CONNECTION", "Connect to the server "..self:getPeerServer())
+    db.Print("Trying to get an access to the server "..self:getPeerServer())
 end
 
 
@@ -64,6 +81,25 @@ end
 
 function SockConnection:sleep(time)
     __socket__mod__.sleep(time)
+end
+
+
+function SockConnection:update(dt)
+    if self.connected == false then
+        self.connectionTimer = self.connectionTimer + dt
+
+        if self.connectionTimer >= self.CONNECTION_MAX_TIMER then
+            self.connectionTimer = 0
+            self:send(0, "DISCONNECTION", "Cut off the bound with the server "..self:getPeerServer())
+            db.Print("Response time too long with the server "..self:getPeerServer()..". Disconnecting")
+            self.server = self.server + 1
+            if self.server > #self.listAvailableServers then
+                self.server = 1
+            end
+            self.sock:setpeername(self:getPeerServer(), self.CONNECTION_PORT)
+            self:tryToConnect()
+        end
+    end
 end
 
 return SockConnection

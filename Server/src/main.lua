@@ -1,4 +1,3 @@
--- TODO: Fix connection glitch
 local __socket__mod__ = require("socket")
 
 udpSocket = __socket__mod__.udp()
@@ -48,9 +47,16 @@ while running do
 
     if data then
         local msg = interpret(data, ip, port)
-        print(string.format("%d | %s on %s | %s >> [%s] %s", __socket__mod__.gettime(), ip, port, msg.uuid, msg.cmd, msg.msg))
+
+            -- Print the message
+        print("+--------------------------------------------------+")
+        print(string.format("From %s on %s:", ip, port))
+        print(string.format("At %d", __socket__mod__.gettime()))
+        print(string.format("ID: %s", msg.uuid))
+        print(string.format("\t>> %s\n\t(%s)", msg.cmd, msg.msg))
 
         act(msg)
+        print("+--------------------------------------------------+")
     end
 
     __socket__mod__.sleep(0.001)
