@@ -1,23 +1,25 @@
 local db = require("mydebug")
 require("SceneManager")
+require("UserImplementedScenes")
 require("Sprite")
 
 local Game = {}
-Game.Scene = nil
+Game.SceneManager = SceneManager("SceneManager")
 
 function Game:init()
-    Game.Scene = Scene("test")
-    Game.Scene:load()
+    Game.SceneManager:addScene(SceneMenu())
+    Game.SceneManager:addScene(SceneGameplay())
+    Game.SceneManager:playScene("menu")
 end
 
 
 function Game:update(dt)
-    Game.Scene:update(dt)
+    Game.SceneManager:update(dt)
 end
 
 
 function Game:draw()
-    Game.Scene:draw()
+    Game.SceneManager:draw()
 end
 
 

@@ -4,6 +4,8 @@ udpSocket = __socket__mod__.udp()
 udpSocket:settimeout(0)
 udpSocket:setsockname("*", 50714)
 
+print("[\t\tNetGame - Walbach Server (c) Noé Toulouze 2019\t\t]\n\n")
+
 local Clients = require("Clients")
 
 local data, ip, port
