@@ -1,51 +1,7 @@
-+---------------------------------------------------------------+	
+﻿+---------------------------------------------------------------+	
 |            NetGame - Walbach (c) Noé Toulouze 2019            |	
 +---------------------------------------------------------------+
 	
 Trying to get an access to the server 192.168.0.6	
 There is no scene currently playing.	
-Received at 1554137519.636: 	Connection accepted	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
-UPDATE	
+Received at 1554139626.4877: 	Connection accepted	
