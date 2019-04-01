@@ -1,6 +1,7 @@
-+-------------------------------------------------------------------+	
-|            NetGame - Wettolsheim (c) Noé Toulouze 2019            |	
-+-------------------------------------------------------------------+
++---------------------------------------------------------------+	
+|            NetGame - Walbach (c) Noé Toulouze 2019            |	
++---------------------------------------------------------------+
 	
 Trying to get an access to the server 192.168.0.6	
-Received at 1554112695.9553: 	Connection accepted	
+There is no scene currently playing.	
+Received at 1554137988.1593: 	Connection accepted	

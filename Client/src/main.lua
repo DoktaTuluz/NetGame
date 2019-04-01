@@ -6,9 +6,9 @@ function love.quit()
     return true
 end
 
-db.Print("+-------------------------------------------------------------------+")
-db.Print("|            NetGame - Wettolsheim (c) Noé Toulouze 2019            |")
-db.Print("+-------------------------------------------------------------------+\n")
+db.Print("+---------------------------------------------------------------+")
+db.Print("|            NetGame - Walbach (c) Noé Toulouze 2019            |")
+db.Print("+---------------------------------------------------------------+\n")
 
 local sock = require("SocketConnection")
 local mainGame = require("Game")
