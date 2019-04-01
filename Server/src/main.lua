@@ -1,3 +1,4 @@
+-- TODO: Fix connection glitch
 local __socket__mod__ = require("socket")
 
 udpSocket = __socket__mod__.udp()
@@ -33,7 +34,9 @@ local function act(message)
             udpSocket:sendto("Connection accepted", message.from.ip, message.from.port)
         end
     elseif message["cmd"] == "DISCONNECTION" then   -- Remove a connected client
-        Clients.pop(message.uuid)
+        if Clients.pop(message.uuid) == false then
+            Clients.removeWaiter(message.uuid)
+        end
     end
 end
 

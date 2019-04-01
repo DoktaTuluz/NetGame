@@ -67,11 +67,12 @@ function Clients.pop(name)
                 udpSocket:sendto("Connection accepted", Clients.waitList[1].ip, Clients.waitList[1].port)
                 print("> Allowing "..Clients.waitList[1].UUID.." to create a bound at "..require("socket").gettime())
             end
-            return
+            return true
         end
     end
 
     print(name.." wasn't connected")
+    return false
 end
 
 
