@@ -53,6 +53,7 @@ function SceneGameplay()
 
     function s:update(dt)
         s:updateScene(dt)
+        db.Print("UPDATE")
 
         if love.keyboard.isDown("v") then
             self.changeTo = "menu"
