@@ -2,6 +2,10 @@ local db = require("mydebug")
 
 io.stdout:setvbuf("no")
 
+function love.quit()
+    return true
+end
+
 db.Print("+-------------------------------------------------------------------+")
 db.Print("|            NetGame - Wettolsheim (c) Noé Toulouze 2019            |")
 db.Print("+-------------------------------------------------------------------+\n")
@@ -16,16 +20,21 @@ function love.load()
     love.window.setMode(800, 600, { fullscreen=false })
 
     -- Server setup
-    sock:init("192.168.0.6", 50714)
-    -- Try to connect to the server while not connected
-    sock:send(0, "CONNECTION", "Connect to the server")
+    sock:init()
 
     mainGame:init()
 end
 
 
 function love.update(dt)
+    for e in love.event.poll() do
+        if e == "quit" then
+            exitProgram()
+        end
+    end
+
     sock:checkSocket()
+    sock:update(dt)
     mainGame:update(dt)
 end
 

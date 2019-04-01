@@ -2,4 +2,5 @@
 |            NetGame - Wettolsheim (c) Noé Toulouze 2019            |	
 +-------------------------------------------------------------------+
 	
-Received at 1554060699.6846: 	Connection accepted	
+Trying to get an access to the server 192.168.0.6	
+Received at 1554112695.9553: 	Connection accepted	

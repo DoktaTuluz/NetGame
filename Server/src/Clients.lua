@@ -17,6 +17,7 @@ function Clients.moveWaiterToActive(name)
     for i, c in ipairs(Clients.waitList) do
         if c.UUID == name then
             Clients.add(c)
+            print(c.UUID.." now on the main client list")
             break
         end
     end
@@ -29,6 +30,7 @@ function Clients.removeWaiter(name)
     for i, c in ipairs(Clients.waitList) do
         if c.UUID == name then
             table.remove(Clients.waitList, i)
+            print("Remove waiter "..c.UUID.." ("..c.ip.." on "..c.port..")")
             return
         end
     end
@@ -45,7 +47,7 @@ function Clients.add(client)
 
     for i, c in ipairs(Clients.list) do
         if c.UUID == client.UUID then
-            print("Can't add twice the same client.")
+            print("Can't add twice the same client ("..c.UUID..")")
             return false
         end
     end
@@ -67,11 +69,12 @@ function Clients.pop(name)
                 udpSocket:sendto("Connection accepted", Clients.waitList[1].ip, Clients.waitList[1].port)
                 print("> Allowing "..Clients.waitList[1].UUID.." to create a bound at "..require("socket").gettime())
             end
-            return
+            return true
         end
     end
 
     print(name.." wasn't connected")
+    return false
 end
 
 
