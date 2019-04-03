@@ -1,0 +1,3 @@
+﻿  Client.cpp
+D:\PinguinBear\NetGame\NGServer\NGServer\Client.h(21): warning C4091: "typedef ": Ignoriert auf der linken Seite von "Client", wenn keine Variable deklariert wurde
+  NGServer.vcxproj -> D:\PinguinBear\NetGame\NGServer\x64\Debug\NGServer.exe
