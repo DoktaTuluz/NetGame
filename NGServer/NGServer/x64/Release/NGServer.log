@@ -1,0 +1,16 @@
+﻿  Client.cpp
+D:\PinguinBear\NetGame\NGServer\NGServer\Client.h(21): warning C4091: "typedef ": Ignoriert auf der linken Seite von "Client", wenn keine Variable deklariert wurde
+  main.cpp
+D:\PinguinBear\NetGame\NGServer\NGServer\Client.h(21): warning C4091: "typedef ": Ignoriert auf der linken Seite von "Client", wenn keine Variable deklariert wurde
+D:\PinguinBear\NetGame\NGServer\NGServer\Message.h(12): warning C4091: "typedef ": Ignoriert auf der linken Seite von "Message", wenn keine Variable deklariert wurde
+  Message.cpp
+D:\PinguinBear\NetGame\NGServer\NGServer\Message.h(12): warning C4091: "typedef ": Ignoriert auf der linken Seite von "Message", wenn keine Variable deklariert wurde
+  Server.cpp
+D:\PinguinBear\NetGame\NGServer\NGServer\Client.h(21): warning C4091: "typedef ": Ignoriert auf der linken Seite von "Client", wenn keine Variable deklariert wurde
+D:\PinguinBear\NetGame\NGServer\NGServer\Message.h(12): warning C4091: "typedef ": Ignoriert auf der linken Seite von "Message", wenn keine Variable deklariert wurde
+D:\PinguinBear\NetGame\NGServer\NGServer\Server.cpp(86): warning C4267: "Argument": Konvertierung von "size_t" nach "int", Datenverlust möglich
+  Code wird generiert.
+  Previous IPDB not found, fall back to full compilation.
+  All 209 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Codegenerierung ist abgeschlossen.
+  NGServer.vcxproj -> D:\PinguinBear\NetGame\NGServer\x64\Release\NGServer.exe
